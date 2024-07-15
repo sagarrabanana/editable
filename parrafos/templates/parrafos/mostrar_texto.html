@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Texto y Párrafos</title>
+</head>
+<body>
+    <h1>Texto Original</h1>
+    <p>En los mares del Caribe, había un pirata llamado Capitán Ronquidos. Era conocido por su valentía y su habilidad para encontrar tesoros, pero también por su peculiar condición: era narcoléptico. En cualquier momento, sin previo aviso, podía quedarse dormido profundamente.</p>
+
+    <p>Un día, mientras navegaban hacia una isla misteriosa en busca de un legendario tesoro, el Capitán Ronquidos se quedó dormido en medio de una tormenta feroz. Su tripulación, acostumbrada a estas situaciones, tomó el control del barco y lo llevó a salvo a la isla.</p>
+
+    <p>Al despertar, el Capitán Ronquidos se encontró en la playa, rodeado de su leal tripulación. Sin perder tiempo, comenzaron a explorar la isla. Mientras buscaban el tesoro, el capitán se quedó dormido varias veces, incluso en los momentos más inoportunos, como cuando estaban desactivando trampas o cruzando puentes colgantes.</p>
+
+    <p>Finalmente, llegaron a una cueva oculta donde se encontraba el tesoro. Justo cuando estaban a punto de abrir el cofre, el Capitán Ronquidos se quedó dormido de nuevo. Pero esta vez, su sueño fue una bendición disfrazada. Mientras dormía, soñó con la combinación exacta para abrir el cofre sin activar las trampas.</p>
+
+    <p>La tripulación, siguiendo las instrucciones del capitán dormido, abrió el cofre y encontró el tesoro más grande que jamás habían visto. Al despertar, el Capitán Ronquidos fue recibido con vítores y aplausos. A pesar de su condición, había llevado a su tripulación al éxito una vez más.</p>
+
+    <p>Desde ese día, el Capitán Ronquidos fue conocido no solo por su valentía, sino también por su habilidad para soñar con soluciones en los momentos más críticos. Y así, continuaron navegando los mares, en busca de nuevas aventuras y tesoros, siempre listos para cualquier siesta inesperada del capitán.</p>
+    <div id="texto">
+        {% for parrafo in parrafos %}
+            <p>{{ parrafo.texto }}</p>
+        {% endfor %}
+    </div>
+    <a href="{% url 'anadir_parrafo' %}">Añadir Párrafo</a>
+</body>
+</html>
