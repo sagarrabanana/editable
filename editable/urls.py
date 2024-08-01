@@ -19,7 +19,7 @@ from django.urls import include, path
 from django.conf import settings
 
 urlpatterns = [
-    path(settings.EDITABLE_ADMIN_URL, admin.site.urls),
-    #path('admin/', admin.site.urls),
+    # path(settings.EDITABLE_ADMIN_URL, admin.site.urls),
+    # path('admin/', admin.site.urls),
     path('', include('parrafos.urls')),
 ]
