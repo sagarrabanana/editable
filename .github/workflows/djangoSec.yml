@@ -9,7 +9,6 @@ env:
 
 jobs:
   build:
-
     runs-on: ubuntu-latest
 
     steps:
@@ -17,14 +16,29 @@ jobs:
         uses: actions/checkout@master
         with:
           fetch-depth: 1
+
+      - name: Set up Python
+        uses: actions/setup-python@v2
+        with:
+          python-version: '3.10'  # Reemplaza '3.x' con la versión de Python que necesitas
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install pipenv
+          pipenv install --dev  # Instalar dependencias incluyendo las de desarrollo
+
       - name: Scan Django settings for security issues
         id: check
-        uses: victoriadrake/django-security-check@master
+        run: |
+          pipenv run python manage.py check --deploy  # Usar pipenv para ejecutar el comando de verificación
+
       - id: results
         run: |
           OUTPUT=$(cat output.txt)
           FORMATTED=${OUTPUT//$'\n'/%0A}
           echo ::set-output name=file::**Django Security Check identified issues:** %0A$FORMATTED
+
       - name: Comment with output
         uses: actions/github-script@v3
         with:
@@ -35,3 +49,4 @@ jobs:
               repo: context.repo.repo,
               body: `${{ steps.results.outputs.file }}`
             })
+
