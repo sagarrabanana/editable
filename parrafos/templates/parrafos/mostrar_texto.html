@@ -3,39 +3,59 @@
 <head>
     <meta charset="UTF-8">
     <title>Texto y Párrafos</title>
-    <style>
-        .parrafo {
-            white-space: pre-line; /* Mantiene los saltos de línea */
-        }
-        .titulo {
-            font-weight: bold;
-            font-size: 1.5em;
-        }
-    </style>
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'parrafos/styles.css' %}">
 </head>
 <body>
-    <h1>Las Aventuras de un Botijo en Altamar</h1>
-    <p>En un pequeño pueblo costero, había un botijo llamado Botijón. Botijón no era un botijo común; soñaba con aventuras en altamar. Un día, decidió que era hora de dejar su vida tranquila y embarcarse en un viaje épico.</p>
-
-    <p>Botijón se subió a un barco pesquero y pronto se encontró navegando por el vasto océano. Los marineros, al principio sorprendidos por su presencia, pronto se encariñaron con él. Botijón se convirtió en el compañero de todos, siempre listo para ofrecer un trago de agua fresca.</p>
-
-    <p>Un día, mientras navegaban cerca de una isla desconocida, una tormenta feroz azotó el barco. Las olas eran enormes y el viento rugía con fuerza. En medio del caos, Botijón rodó por la cubierta y cayó al mar. Los marineros, preocupados, intentaron rescatarlo, pero la tormenta era demasiado fuerte.</p>
-
-    <p>Botijón flotó a la deriva durante horas, hasta que finalmente llegó a la orilla de una isla desierta. Allí, conoció a un grupo de cangrejos que lo ayudaron a encontrar refugio. Agradecido, Botijón compartió su agua con ellos, y juntos formaron una pequeña comunidad.</p>
-
-    <p>Con el tiempo, Botijón y los cangrejos exploraron la isla y descubrieron un antiguo mapa del tesoro. Decidieron seguir las pistas y, después de muchas aventuras, encontraron un cofre lleno de joyas y monedas de oro. Botijón se convirtió en el héroe de la isla, y los cangrejos lo coronaron como su rey.</p>
-
-    <p>Un día, un barco pasó cerca de la isla y los marineros reconocieron a Botijón. Lo rescataron y lo llevaron de vuelta a su pueblo. Aunque extrañaba a sus amigos cangrejos, Botijón estaba feliz de estar en casa, con muchas historias que contar sobre sus aventuras en altamar.</p>
-
-    <p>Desde entonces, Botijón fue conocido como el botijo aventurero, y su historia inspiró a muchos otros a seguir sus sueños, sin importar cuán inusuales fueran.</p>
-    <div id="texto">
-        {% for parrafo in parrafos %}
-            <div class="parrafo">
-                <p class="titulo">{{ parrafo.titulo }}</p>
-                <p>{{ parrafo.texto }}</p>
-            </div>
-        {% endfor %}
+    <button class="indice-btn" onclick="toggleIndice()">Índice</button>
+    <div id="mySidebar" class="sidebar">
+        <h2>Índice</h2>
+        <ul id="indice">
+            {% for parrafo in parrafos %}
+                <li><a href="#{{ parrafo.get_anchor }}">{{ parrafo.titulo }}</a></li>
+            {% endfor %}
+        </ul>
     </div>
-    <a href="{% url 'anadir_parrafo' %}">Añadir Párrafo</a>
+
+    <div id="contenido">
+        <h1>Las Aventuras de un Botijo en Altamar</h1>
+        <p>En un pequeño pueblo costero, había un botijo llamado Botijón. Botijón no era un botijo común; soñaba con aventuras en altamar. Un día, decidió que era hora de dejar su vida tranquila y embarcarse en un viaje épico.</p>
+
+        <p>Botijón se subió a un barco pesquero y pronto se encontró navegando por el vasto océano. Los marineros, al principio sorprendidos por su presencia, pronto se encariñaron con él. Botijón se convirtió en el compañero de todos, siempre listo para ofrecer un trago de agua fresca.</p>
+
+        <p>Un día, mientras navegaban cerca de una isla desconocida, una tormenta feroz azotó el barco. Las olas eran enormes y el viento rugía con fuerza. En medio del caos, Botijón rodó por la cubierta y cayó al mar. Los marineros, preocupados, intentaron rescatarlo, pero la tormenta era demasiado fuerte.</p>
+
+        <p>Botijón flotó a la deriva durante horas, hasta que finalmente llegó a la orilla de una isla desierta. Allí, conoció a un grupo de cangrejos que lo ayudaron a encontrar refugio. Agradecido, Botijón compartió su agua con ellos, y juntos formaron una pequeña comunidad.</p>
+
+        <p>Con el tiempo, Botijón y los cangrejos exploraron la isla y descubrieron un antiguo mapa del tesoro. Decidieron seguir las pistas y, después de muchas aventuras, encontraron un cofre lleno de joyas y monedas de oro. Botijón se convirtió en el héroe de la isla, y los cangrejos lo coronaron como su rey.</p>
+
+        <p>Un día, un barco pasó cerca de la isla y los marineros reconocieron a Botijón. Lo rescataron y lo llevaron de vuelta a su pueblo. Aunque extrañaba a sus amigos cangrejos, Botijón estaba feliz de estar en casa, con muchas historias que contar sobre sus aventuras en altamar.</p>
+
+        <p>Desde entonces, Botijón fue conocido como el botijo aventurero, y su historia inspiró a muchos otros a seguir sus sueños, sin importar cuán inusuales fueran.</p>
+        
+        <div id="texto">
+            {% for parrafo in parrafos %}
+                <div class="parrafo" id="{{ parrafo.get_anchor }}">
+                    <p class="titulo">{{ parrafo.titulo }}</p>
+                    <p>{{ parrafo.texto }}</p>
+                </div>
+            {% endfor %}
+        </div>
+        <a href="{% url 'anadir_parrafo' %}">Añadir Párrafo</a>
+    </div>
+
+    <script>
+        function toggleIndice() {
+            var sidebar = document.getElementById("mySidebar");
+            var contenido = document.getElementById("contenido");
+            if (sidebar.classList.contains('open')) {
+                sidebar.classList.remove('open');
+                contenido.classList.remove('shifted');
+            } else {
+                sidebar.classList.add('open');
+                contenido.classList.add('shifted');
+            }
+        }
+    </script>
 </body>
 </html>
