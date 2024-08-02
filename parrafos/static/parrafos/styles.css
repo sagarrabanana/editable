@@ -1,0 +1,61 @@
+body {
+    font-family: Arial, sans-serif;
+}
+.parrafo {
+    white-space: pre-line; /* Mantiene los saltos de línea */
+}
+.titulo {
+    font-weight: bold;
+    font-size: 1.5em;
+}
+.indice-btn {
+    position: fixed;
+    top: 10px;
+    left: 10px;
+    padding: 10px 20px;
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    cursor: pointer;
+    z-index: 1000;
+}
+.indice-btn:focus {
+    outline: none;
+}
+.sidebar {
+    height: 100%;
+    width: 250px;
+    position: fixed;
+    top: 0;
+    left: -250px;
+    background-color: #f8f9fa;
+    overflow-x: hidden;
+    transition: 0.5s;
+    padding-top: 60px;
+    z-index: 999;
+}
+.sidebar a {
+    padding: 10px 15px;
+    text-decoration: none;
+    font-size: 18px;
+    color: #333;
+    display: block;
+    transition: 0.3s;
+}
+.sidebar a:hover {
+    background-color: #ddd;
+}
+.sidebar h2 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+.open {
+    left: 0;
+}
+#contenido {
+    margin-left: 30px; /* Espacio para el botón "Índice" */
+    transition: margin-left 0.5s;
+}
+#contenido.shifted {
+    margin-left: 280px; /* Ajusta este valor según el ancho de tu sidebar */
+}
