@@ -3,14 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <title>Añadir Párrafo</title>
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'parrafos/styles.css' %}">
+    <link href="https://fonts.googleapis.com/css2?family=Carlito&display=swap" rel="stylesheet">
 </head>
 <body>
-    <h1>Añadir un nuevo Párrafo</h1>
-    <form method="post">
-        {% csrf_token %}
-        {{ form.as_p }}
-        <button type="submit">Añadir</button>
-    </form>
-    <a href="{% url 'mostrar_texto' %}">Volver</a>
+    <div id="contenido" class="form-container">
+        <h1>Añadir un nuevo Párrafo</h1>
+        <form method="post">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <button type="submit">Añadir</button>
+        </form>
+        <a href="{% url 'mostrar_texto' %}"><button class="back-button">Volver</button></a>
+    </div>
 </body>
 </html>
