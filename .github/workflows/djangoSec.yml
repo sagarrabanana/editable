@@ -32,6 +32,10 @@ jobs:
         run: |
           PIPENV_IGNORE_VIRTUALENVS=1 pipenv install --dev  # Instalar dependencias incluyendo las de desarrollo
 
+      - name: Verify Pipfile
+        run: |
+          cat Pipfile  # Verificar que Django esté listado como una dependencia
+
       - name: Verify Django installation
         run: |
           PIPENV_IGNORE_VIRTUALENVS=1 pipenv run python -m django --version  # Verifica que Django esté instalado correctamente
