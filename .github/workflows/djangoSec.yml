@@ -41,6 +41,7 @@ jobs:
           PIPENV_IGNORE_VIRTUALENVS=1 pipenv run python -m django --version  # Verifica que Django esté instalado correctamente
 
       - name: Scan Django settings for security issues
+        id: check
         run: |
           PIPENV_IGNORE_VIRTUALENVS=1 pipenv run python manage.py check --deploy  # Usar pipenv para ejecutar el comando de verificación
 
