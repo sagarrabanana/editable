@@ -29,6 +29,7 @@ jobs:
           pip install pipenv
           pipenv --rm || true  # Eliminar cualquier entorno virtual existente
           PIPENV_IGNORE_VIRTUALENVS=1 pipenv install --dev  # Instalar dependencias incluyendo las de desarrollo
+          pipenv run pip install django  # Instalar Django explícitamente
 
       - name: Verify Django installation
         run: |
