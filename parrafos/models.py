@@ -7,3 +7,6 @@ class Parrafo(models.Model):
 
     def __str__(self):
         return self.titulo
+
+    def get_anchor(self):
+        return f"parrafo-{self.pk}"
