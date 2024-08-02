@@ -5,8 +5,6 @@ on: pull_request_target
 env:
   SECRET_KEY: ${{ secrets.SECRET_KEY }}
   FAIL_LEVEL: WARNING
-  ENV_TYPE: pipenv
-  PIPENV_IGNORE_VIRTUALENVS: 1  # Forzar la creación de un nuevo entorno virtual
 
 jobs:
   build:
@@ -26,22 +24,20 @@ jobs:
       - name: Install dependencies
         run: |
           python -m pip install --upgrade pip
-          pip install pipenv
-          pipenv --rm || true  # Eliminar cualquier entorno virtual existente
-          PIPENV_IGNORE_VIRTUALENVS=1 pipenv install --dev  # Instalar dependencias incluyendo las de desarrollo
-          pipenv run pip install django  # Instalar Django explícitamente
+          pip install -r requirements.txt  # Instalar dependencias desde requirements.txt
+          pip install django  # Instalar Django explícitamente
 
       - name: Verify Django installation
         run: |
-          PIPENV_IGNORE_VIRTUALENVS=1 pipenv run python -m django --version  # Verifica que Django esté instalado correctamente
+          python -m django --version  # Verifica que Django esté instalado correctamente
 
       - name: Scan Django settings for security issues
         run: |
-          PIPENV_IGNORE_VIRTUALENVS=1 pipenv run python manage.py check --deploy  # Usar pipenv para ejecutar el comando de verificación
+          python manage.py check --deploy  # Usar pip para ejecutar el comando de verificación
 
       - id: results
         run: |
-          OUTPUT=$(PIPENV_IGNORE_VIRTUALENVS=1 pipenv run python manage.py check --deploy)  # Ejecuta el comando de verificación de nuevo y captura la salida
+          OUTPUT=$(python manage.py check --deploy)  # Ejecuta el comando de verificación de nuevo y captura la salida
           FORMATTED=${OUTPUT//$'\n'/%0A}
           echo ::set-output name=file::**Django Security Check identified issues:** %0A$FORMATTED
 
