@@ -23,16 +23,14 @@ jobs:
         with:
           python-version: '3.10'  # Reemplaza '3.10' con la versión de Python que necesitas
 
-      - name: Install dependencies
+      - name: Install pipenv
         run: |
           python -m pip install --upgrade pip
           pip install pipenv
-          pipenv --rm || true  # Eliminar cualquier entorno virtual existente
-          PIPENV_IGNORE_VIRTUALENVS=1 pipenv install --dev  # Instalar dependencias incluyendo las de desarrollo
 
-      - name: Install Django explicitly
+      - name: Install dependencies
         run: |
-          PIPENV_IGNORE_VIRTUALENVS=1 pipenv run pip install django  # Instalar Django explícitamente
+          PIPENV_IGNORE_VIRTUALENVS=1 pipenv install --dev  # Instalar dependencias incluyendo las de desarrollo
 
       - name: Verify Django installation
         run: |
