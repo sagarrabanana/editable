@@ -42,6 +42,7 @@ body {
 .header .instagram-icon {
     color: white;
     margin-left: 10px;
+    margin-right: 15px;
     font-size: 24px;
     text-decoration: none;
 }
@@ -56,7 +57,7 @@ body {
     font-size: 1.5em;
 }
 .sidebar {
-    height: 100%;
+    height: calc(100vh - 60px);
     width: 250px;
     position: fixed;
     top: 0;
@@ -88,6 +89,11 @@ body {
 #contenido {
     margin-left: 30px; /* Espacio para el botón "Índice" */
     padding-top: 70px; /* Ajustar según la altura de la cabecera */
+    transition: margin-left 0.5s;
+}
+#contenido-anadir {
+    margin-left: 30px; /* Espacio para el botón "Índice" */
+    padding-top: 10px; /* Ajustar según la altura de la cabecera */
     transition: margin-left 0.5s;
 }
 #contenido.shifted {
@@ -140,13 +146,14 @@ body {
     padding: 20px;
     background-color: yellow; /* Fondo amarillo */
     border: 1px solid black;
-    width: 300px;
+    width: 500px;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
 }
 .popup p {
     margin: 0;
+    margin-bottom: 1em;
 }
 .popup .close-btn {
     display: block;
