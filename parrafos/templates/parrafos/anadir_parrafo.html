@@ -46,7 +46,7 @@
                 <div id="editor-container"></div> <!-- Contenedor de Quill -->
                 <textarea name="texto" id="id_texto" style="display:none;"></textarea> <!-- Campo de texto oculto -->
             </div>
-            <input type="file" id="imageInput" style="display: none;" />
+            <input type="file" id="imageInput" accept="image/*" style="display: none;" /> <!-- Solo permitir imágenes -->
             <button type="submit">Añadir</button>
         </form>
         <a href="{% url 'mostrar_texto' %}"><button class="back-button">Volver</button></a>
@@ -75,6 +75,10 @@
             input.click();
             input.onchange = () => {
                 var file = input.files[0];
+                if (!file.type.startsWith('image/')) {
+                    alert('Solo se permiten archivos de imagen.'); // Verificar tipo de archivo
+                    return;
+                }
                 if (file.size > 2 * 1024 * 1024) {
                     alert('El tamaño de la imagen no debe exceder los 2MB. Por favor, reduce la calidad de la imagen y vuelve a intentarlo.');
                     return;
