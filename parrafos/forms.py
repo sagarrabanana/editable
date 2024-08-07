@@ -8,10 +8,11 @@ from PIL import Image
 class ParrafoForm(forms.ModelForm):
     class Meta:
         model = Parrafo
-        fields = ['titulo', 'texto']
+        fields = ['titulo', 'texto', 'autor']
         widgets = {
             'titulo': forms.TextInput(attrs={'placeholder': 'Título'}),
             'texto': forms.Textarea(attrs={'placeholder': 'Escribe tu párrafo aquí...'}),
+            'autor': forms.TextInput(attrs={'placeholder': 'Autor'})
         }
 
     def clean_texto(self):
