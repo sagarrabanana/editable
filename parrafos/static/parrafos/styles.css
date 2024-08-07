@@ -56,7 +56,7 @@ body {
     font-size: 1.5em;
 }
 .sidebar {
-    height: 100%;
+    height: calc(100vh - 60px);
     width: 250px;
     position: fixed;
     top: 0;
@@ -140,7 +140,7 @@ body {
     padding: 20px;
     background-color: yellow; /* Fondo amarillo */
     border: 1px solid black;
-    width: 300px;
+    width: 500px;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
