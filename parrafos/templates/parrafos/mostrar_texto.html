@@ -43,7 +43,7 @@
             {% for parrafo in parrafos %}
                 <div class="parrafo" id="{{ parrafo.get_anchor }}">
                     <p class="titulo">{{ parrafo.titulo }}</p>
-                    <p>{{ parrafo.texto }}</p>
+                    <p>{{ parrafo.texto|safe }}</p> <!-- Usa el filtro safe para renderizar HTML -->
                 </div>
             {% endfor %}
         </div>
