@@ -153,6 +153,7 @@ body {
 }
 .popup p {
     margin: 0;
+    margin-bottom: 1em;
 }
 .popup .close-btn {
     display: block;
