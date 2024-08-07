@@ -88,6 +88,11 @@ body {
 }
 #contenido {
     margin-left: 30px; /* Espacio para el botón "Índice" */
+    padding-top: 70px; /* Ajustar según la altura de la cabecera */
+    transition: margin-left 0.5s;
+}
+#contenido-anadir {
+    margin-left: 30px; /* Espacio para el botón "Índice" */
     padding-top: 10px; /* Ajustar según la altura de la cabecera */
     transition: margin-left 0.5s;
 }
