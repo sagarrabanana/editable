@@ -1,5 +1,32 @@
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Carlito', sans-serif;
+    margin: 0;
+    padding: 0;
+}
+.header {
+    width: 100%;
+    background-color: #f8f9fa; /* Mismo color de fondo que el de la sidebar */
+    padding: 10px 0;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    border-bottom: 1px solid black; /* Línea negra en el borde inferior */
+}
+.header button {
+    margin: 0 10px;
+    padding: 10px 20px;
+    background-color: white;
+    color: black;
+    border: 1px solid black;
+    cursor: pointer;
+    font-size: 16px;
+}
+.header button:focus {
+    outline: none;
 }
 .parrafo {
     white-space: pre-line; /* Mantiene los saltos de línea */
@@ -7,20 +34,6 @@ body {
 .titulo {
     font-weight: bold;
     font-size: 1.5em;
-}
-.indice-btn {
-    position: fixed;
-    top: 10px;
-    left: 10px;
-    padding: 10px 20px;
-    background-color: #007BFF;
-    color: white;
-    border: none;
-    cursor: pointer;
-    z-index: 1000;
-}
-.indice-btn:focus {
-    outline: none;
 }
 .sidebar {
     height: 100%;
@@ -54,8 +67,46 @@ body {
 }
 #contenido {
     margin-left: 30px; /* Espacio para el botón "Índice" */
+    padding-top: 70px; /* Ajustar según la altura de la cabecera */
     transition: margin-left 0.5s;
 }
 #contenido.shifted {
     margin-left: 280px; /* Ajusta este valor según el ancho de tu sidebar */
+}
+.form-container {
+    margin: 30px;
+}
+.form-container form {
+    display: flex;
+    flex-direction: column;
+}
+.form-container input[type="text"] {
+    width: 50%; /* El título ocupa la mitad del ancho */
+    margin-bottom: 15px;
+    padding: 10px;
+    font-size: 16px;
+}
+.form-container textarea {
+    width: 100%; /* El cuadro de texto ocupa todo el ancho */
+    margin-bottom: 15px;
+    padding: 10px;
+    font-size: 16px;
+}
+.form-container button {
+    width: 150px; /* Ajustar el tamaño del botón */
+    padding: 5px 10px; /* Botón más pequeño */
+    background-color: white;
+    color: black;
+    border: 1px solid black;
+    cursor: pointer;
+    font-size: 14px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center; /* Centrar el texto en el botón */
+}
+.form-container .back-button {
+    margin-top: 10px;
+}
+.form-container .back-button::before {
+    content: "← "; /* Flecha hacia la izquierda */
 }

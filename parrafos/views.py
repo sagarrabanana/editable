@@ -8,10 +8,13 @@ def mostrar_texto(request):
 
 def anadir_parrafo(request):
     if request.method == 'POST':
-        form = ParrafoForm(request.POST)
+        form = ParrafoForm(request.POST, request.FILES)
         if form.is_valid():
             form.save()
             return redirect('mostrar_texto')
+        else:
+            print("Form is not valid")
+            print(form.errors)
     else:
         form = ParrafoForm()
     return render(request, 'parrafos/anadir_parrafo.html', {'form': form})
