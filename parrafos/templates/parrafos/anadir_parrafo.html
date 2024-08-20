@@ -58,9 +58,12 @@
             modules: {
                 toolbar: {
                     container: [
-                        ['bold', 'italic', 'underline'],        // toggled buttons
-                        ['link', 'image'],                      // link and image
+                        [{ 'header': [1, 2, 3, false] }],
+                        ['bold', 'italic', 'underline'],
+                        ['link', 'image'],
                         [{ 'list': 'ordered'}, { 'list': 'bullet' }],
+                        [{ 'script': 'sub' }, { 'script': 'super' }],
+                        [{ 'align': [] }],
                         ['clean']                               // remove formatting button
                     ],
                     handlers: {
