@@ -3,6 +3,7 @@ body {
     margin: 0;
     padding: 0;
 }
+
 .header {
     width: 100%;
     background-color: black; /* Fondo negro */
@@ -16,13 +17,16 @@ body {
     align-items: center;
     border-bottom: 1px solid black; /* Línea negra en el borde inferior */
 }
+
 .header-left, .header-right {
     display: flex;
     align-items: center;
 }
+
 .header-right {
     margin-left: auto;
 }
+
 .header button {
     margin: 0 10px;
     padding: 10px 20px;
@@ -33,12 +37,15 @@ body {
     font-size: 16px;
     font-weight: bold; /* Texto en negrita */
 }
+
 .header button:hover {
     background-color: yellow; /* Fondo amarillo al pasar el cursor */
 }
+
 .header button:focus {
     outline: none;
 }
+
 .header .instagram-icon {
     color: white;
     margin-left: 10px;
@@ -46,16 +53,20 @@ body {
     font-size: 24px;
     text-decoration: none;
 }
+
 .header .instagram-icon:hover {
     color: yellow; /* Cambiar a amarillo al pasar el cursor */
 }
+
 .parrafo {
     white-space: pre-line; /* Mantiene los saltos de línea */
 }
+
 .titulo {
     font-weight: bold;
     font-size: 1.5em;
 }
+
 .sidebar {
     height: calc(100vh - 60px);
     width: 250px;
@@ -68,6 +79,7 @@ body {
     padding-top: 60px;
     z-index: 999;
 }
+
 .sidebar a {
     padding: 10px 15px;
     text-decoration: none;
@@ -76,48 +88,59 @@ body {
     display: block;
     transition: 0.3s;
 }
+
 .sidebar a:hover {
     background-color: yellow;
 }
+
 .sidebar h2 {
     text-align: center;
     margin-bottom: 20px;
 }
+
 .open {
     left: 0;
 }
+
 #contenido {
     margin-left: 30px; /* Espacio para el botón "Índice" */
     padding-top: 70px; /* Ajustar según la altura de la cabecera */
     transition: margin-left 0.5s;
 }
+
 #contenido-anadir {
     margin-left: 30px; /* Espacio para el botón "Índice" */
     padding-top: 10px; /* Ajustar según la altura de la cabecera */
     transition: margin-left 0.5s;
 }
+
 #contenido.shifted {
     margin-left: 280px; /* Ajusta este valor según el ancho de tu sidebar */
 }
+
 .form-container {
     margin: 30px;
 }
+
 .form-container form {
     display: flex;
     flex-direction: column;
 }
+
 .form-container input[type="text"] {
     width: 50%; /* El título ocupa la mitad del ancho */
     margin-bottom: 15px;
     padding: 10px;
     font-size: 16px;
 }
+
 .form-container textarea {
     width: 100%; /* El cuadro de texto ocupa todo el ancho */
     margin-bottom: 15px;
     padding: 10px;
     font-size: 16px;
 }
+
 .form-container button {
     width: 150px; /* Ajustar el tamaño del botón */
     padding: 5px 10px; /* Botón más pequeño */
@@ -130,15 +153,19 @@ body {
     align-items: center;
     justify-content: center; /* Centrar el texto en el botón */
 }
+
 .form-container button:hover {
     background-color: yellow; /* Fondo amarillo al pasar el cursor */
 }
+
 .form-container .back-button {
     margin-top: 10px;
 }
+
 .form-container .back-button::before {
     content: "← "; /* Flecha hacia la izquierda */
 }
+
 .popup {
     display: none;
     position: fixed;
@@ -151,12 +178,32 @@ body {
     left: 50%;
     transform: translate(-50%, -50%);
 }
+
 .popup p {
     margin: 0;
     margin-bottom: 1em;
 }
+
 .popup .close-btn {
     display: block;
     text-align: right;
     margin-top: 10px;
+}
+
+/* Quill Editor */
+#editor-container {
+    height: 300px;
+}
+
+/* Clases de alineación de Quill */
+.ql-align-right {
+    text-align: right;
+}
+
+.ql-align-center {
+    text-align: center;
+}
+
+.ql-align-justify {
+    text-align: justify;
 }
