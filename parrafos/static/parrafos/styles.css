@@ -106,6 +106,8 @@ body {
     margin-left: 30px; /* Espacio para el botón "Índice" */
     padding-top: 70px; /* Ajustar según la altura de la cabecera */
     transition: margin-left 0.5s;
+    padding-left: 50px;  /* Incrementar sangrado izquierdo */
+    padding-right: 50px; /* Incrementar sangrado derecho */
 }
 
 #contenido-anadir {
@@ -116,6 +118,8 @@ body {
 
 #contenido.shifted {
     margin-left: 280px; /* Ajusta este valor según el ancho de tu sidebar */
+    padding-left: 50px;  /* Incrementar sangrado izquierdo */
+    padding-right: 50px; /* Incrementar sangrado derecho */
 }
 
 .form-container {
