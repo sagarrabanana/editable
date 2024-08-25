@@ -7,7 +7,7 @@ SECRET_KEY = 'django-insecure-njc66@!(iz)@zl0=!0jho7k%dc^h9gh(664d1gux*%2e+$*%=t
 
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['192.168.1.41', '127.0.0.1']  # Asegúrate de incluir aquí todos los dominios necesarios
 
 INSTALLED_APPS = [
     'django.contrib.staticfiles',
