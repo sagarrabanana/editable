@@ -12,7 +12,7 @@ class ParrafoForm(forms.ModelForm):
         widgets = {
             'titulo': forms.TextInput(attrs={'placeholder': 'Título'}),
             'texto': forms.Textarea(attrs={'placeholder': 'Escribe tu párrafo aquí...'}),
-            'autor': forms.TextInput(attrs={'placeholder': 'Autor'})
+            'autor': forms.TextInput(attrs={'placeholder': 'Escrito por'})
         }
 
     def clean_texto(self):
