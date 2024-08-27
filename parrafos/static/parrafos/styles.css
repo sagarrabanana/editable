@@ -64,8 +64,10 @@ body {
 
 .titulo {
     font-weight: bold;
-    font-size: 1.5em;
+    font-size: 2.5em;
     margin-bottom: 0px;
+    border-bottom: 5px solid yellow; /* Línea amarilla gruesa debajo del título */
+    display: inline-block; /
 }
 
 .autor {
@@ -218,4 +220,36 @@ body {
 
 .ql-align-justify {
     text-align: justify;
+}
+
+.titulo-desertorex {
+    font-size: 4em; /* Tamaño de la fuente grande */
+    text-align: center; /* Centrar el título */
+    margin-top: 20px; /* Margen superior para espaciar desde el header */
+    border-bottom: 5px solid yellow; /* Línea amarilla gruesa debajo del título */
+    display: block; /* Hace que el título ocupe todo el ancho disponible */
+    width: fit-content; /* Ajusta el ancho al contenido */
+    margin-left: auto; /* Centra el bloque horizontalmente */
+    margin-right: auto; /* Centra el bloque horizontalmente */
+}
+
+.texto-desertorex {
+    text-align: right; /* Alineado a la derecha */
+    font-style: italic; /* Texto en cursiva */
+    margin-right: 250px; /* Espacio a la derecha */
+    margin-left: 50px; /* Espacio a la izquierda */
+    line-height: 1.5; /* Altura de línea para mejorar la legibilidad */
+}
+
+.llamamiento {
+    text-align: right; /* Alineado a la derecha */
+    font-style: normal; /* Texto en estilo normal (no cursiva) */
+    margin-right: 250px; /* Espacio a la derecha */
+    margin-left: 50px; /* Espacio a la izquierda */
+    margin-top: 10px; /* Espacio entre el texto y el "Llamamiento" */
+}
+
+.titulo-desertorex .highlight {
+    font-size: 1.3em; /* Tamaño de la fuente más grande para los últimos dos caracteres */
+    font-weight: bold; /* Opcional: hace que los últimos dos caracteres sean más audaces */
 }

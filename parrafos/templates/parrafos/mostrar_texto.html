@@ -13,7 +13,7 @@
         <div class="header-left">
             <button class="indice-btn" onclick="toggleIndice()">Índice</button>
             <a href="{% url 'anadir_parrafo' %}">
-                <button class="indice-btn">Añadir Deserción</button>
+                <button class="indice-btn">Añade tu deserción</button>
             </a>
         </div>
         <div class="header-right">
@@ -35,20 +35,34 @@
     </div>
 
     <div id="contenido">
-        <h1>Las Aventuras de un Botijo en Altamar</h1>
-        <p>En un pequeño pueblo costero, había un botijo llamado Botijón. Botijón no era un botijo común; soñaba con aventuras en altamar. Un día, decidió que era hora de dejar su vida tranquila y embarcarse en un viaje épico.</p>
-
-        <p>Botijón se subió a un barco pesquero y pronto se encontró navegando por el vasto océano. Los marineros, al principio sorprendidos por su presencia, pronto se encariñaron con él. Botijón se convirtió en el compañero de todos, siempre listo para ofrecer un trago de agua fresca.</p>
-
-        <p>Un día, mientras navegaban cerca de una isla desconocida, una tormenta feroz azotó el barco. Las olas eran enormes y el viento rugía con fuerza. En medio del caos, Botijón rodó por la cubierta y cayó al mar. Los marineros, preocupados, intentaron rescatarlo, pero la tormenta era demasiado fuerte.</p>
-
-        <p>Botijón flotó a la deriva durante horas, hasta que finalmente llegó a la orilla de una isla desierta. Allí, conoció a un grupo de cangrejos que lo ayudaron a encontrar refugio. Agradecido, Botijón compartió su agua con ellos, y juntos formaron una pequeña comunidad.</p>
-
-        <p>Con el tiempo, Botijón y los cangrejos exploraron la isla y descubrieron un antiguo mapa del tesoro. Decidieron seguir las pistas y, después de muchas aventuras, encontraron un cofre lleno de joyas y monedas de oro. Botijón se convirtió en el héroe de la isla, y los cangrejos lo coronaron como su rey.</p>
-
-        <p>Un día, un barco pasó cerca de la isla y los marineros reconocieron a Botijón. Lo rescataron y lo llevaron de vuelta a su pueblo. Aunque extrañaba a sus amigos cangrejos, Botijón estaba feliz de estar en casa, con muchas historias que contar sobre sus aventuras en altamar.</p>
-
-        <p>Desde entonces, Botijón fue conocido como el botijo aventurero, y su historia inspiró a muchos otros a seguir sus sueños, sin importar cuán inusuales fueran.</p>
+        <!-- Nuevo contenido reemplazando el texto de "Las Aventuras de un Botijo en Altamar" -->
+        <h1 class="titulo-desertorex">
+            DESERTOR<span class="highlight">EX</span>
+          </h1>
+        <p class="texto-desertorex">
+            “Nuestra estrategia es pues la siguiente: establecer
+            desde ahora un conjunto de focos de deserción, de<br>
+            polos de secesión, de puntos de concentración. Para
+            los fugitivos. Para los que se van. Un conjunto de<br>
+            lugares en los cuales sustraerse al imperio de una
+            civilización que camina hacia el precipicio. De lo que<br>
+            se trata es de darse los medios, de encontrar la
+            escala donde puedan resolverse el conjunto de<br>
+            cuestiones que, planteadas a cada uno
+            separadamente, conducen a la depresión. ¿Cómo<br>
+            deshacerse de las dependencias que nos debilitan?
+            ¿Cómo organizarse para dejar de trabajar? ¿Cómo<br>
+            establecerse fuera de la toxicidad de las metrópolis
+            sin, por otro lado, «irse al campo»? ¿Cómo detener<br>
+            las centrales nucleares? ¿Cómo hacer para no verse
+            forzado a recurrir a la trituración psiquiátrica cuando<br>
+            un amigo se vuelve loco, a los medicamentos burdos
+            de la medicina mecanicista cuando cae enfermo?<br>
+            ¿Cómo vivir juntos sin aplastarse mutuamente?
+            ¿Cómo acoger la muerte de un camarada? ¿Cómo<br>
+            arruinar al imperio?"
+        </p>
+        <p class="llamamiento">Llamamiento (2003)</p>
         
         <div id="texto">
             {% for parrafo in parrafos %}
