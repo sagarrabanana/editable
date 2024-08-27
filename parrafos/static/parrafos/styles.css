@@ -65,6 +65,14 @@ body {
 .titulo {
     font-weight: bold;
     font-size: 1.5em;
+    margin-bottom: 0px;
+}
+
+.autor {
+    margin-top: 0; /* Elimina el espacio superior */
+    margin-bottom: 5px; /* Reduce el espacio inferior si es necesario */
+    font-size: 0.9em; /* Opcional: ajustar tamaño de fuente */
+    color: #555; /* Opcional: color para el nombre del autor */
 }
 
 .sidebar {
