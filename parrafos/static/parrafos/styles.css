@@ -39,7 +39,7 @@ body {
 }
 
 .header button:hover {
-    background-color: yellow; /* Fondo amarillo al pasar el cursor */
+    background-color: #CCFF00; /* Fondo amarillo al pasar el cursor */
 }
 
 .header button:focus {
@@ -55,7 +55,7 @@ body {
 }
 
 .header .instagram-icon:hover {
-    color: yellow; /* Cambiar a amarillo al pasar el cursor */
+    color: #CCFF00; /* Cambiar a amarillo al pasar el cursor */
 }
 
 .parrafo {
@@ -66,7 +66,7 @@ body {
     font-weight: bold;
     font-size: 2.5em;
     margin-bottom: 0px;
-    border-bottom: 5px solid yellow; /* Línea amarilla gruesa debajo del título */
+    border-bottom: 5px solid #CCFF00; /* Línea amarilla gruesa debajo del título */
     display: inline-block; /
 }
 
@@ -100,7 +100,7 @@ body {
 }
 
 .sidebar a:hover {
-    background-color: yellow;
+    background-color: #CCFF00;
 }
 
 .sidebar h2 {
@@ -169,7 +169,7 @@ body {
 }
 
 .form-container button:hover {
-    background-color: yellow; /* Fondo amarillo al pasar el cursor */
+    background-color: #CCFF00; /* Fondo amarillo al pasar el cursor */
 }
 
 .form-container .back-button {
@@ -185,7 +185,7 @@ body {
     position: fixed;
     z-index: 1001;
     padding: 20px;
-    background-color: yellow; /* Fondo amarillo */
+    background-color: #CCFF00; /* Fondo amarillo */
     border: 1px solid black;
     width: 500px;
     top: 50%;
@@ -206,7 +206,7 @@ body {
 
 /* Quill Editor */
 #editor-container {
-    height: 300px;
+    height: 200px;
 }
 
 /* Clases de alineación de Quill */
@@ -226,7 +226,7 @@ body {
     font-size: 4em; /* Tamaño de la fuente grande */
     text-align: center; /* Centrar el título */
     margin-top: 20px; /* Margen superior para espaciar desde el header */
-    border-bottom: 5px solid yellow; /* Línea amarilla gruesa debajo del título */
+    border-bottom: 5px solid #CCFF00; /* Línea amarilla gruesa debajo del título */
     display: block; /* Hace que el título ocupe todo el ancho disponible */
     width: fit-content; /* Ajusta el ancho al contenido */
     margin-left: auto; /* Centra el bloque horizontalmente */
